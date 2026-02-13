@@ -1,0 +1,81 @@
+{
+  "name": "n8n and gmail",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 18,
+              "triggerAtMinute": 2
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9bf865a8-872a-43f7-af84-9b7805a21f7a",
+      "name": "Schedule Trigger",
+      "alwaysOutputData": true,
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "sendTo": "singhakshdeep126@gmail.com",
+        "subject": "Hello Champion",
+        "emailType": "text",
+        "message": "You are a Winner!!",
+        "options": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "2ecacb58-1f38-4025-a3ec-3a8b8ae68647",
+      "name": "Send a message",
+      "webhookId": "7cca12d5-14f1-4c01-9a78-57ee1aa31e1c",
+      "retryOnFail": true,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "LVKgToJch61DAAC2",
+          "name": "Gmail account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "98a79995-026d-4fc6-a949-cf0720f8f262",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "51490906cbe82fc071bfd45f4afaaf3b6ac3f22987699cec3e33c4d40a35b582"
+  },
+  "id": "Nh8iL6TVVxkLGmxmYPG3t",
+  "tags": []
+}
